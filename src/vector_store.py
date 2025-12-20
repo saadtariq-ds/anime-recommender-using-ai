@@ -8,7 +8,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from config.config import (
-    HUGGINGFACE_API_KEY, EMBEDDING_MODEL_NAME, 
+    EMBEDDING_MODEL_NAME, 
     CHUNK_SIZE, CHUNK_OVERLAP
 )
 
@@ -19,7 +19,6 @@ class AnimeVectorStore:
         self.presist_directory = presist_directory
         self.embedding = HuggingFaceEmbeddings(
             model_name=EMBEDDING_MODEL_NAME,
-            huggingfacehub_api_token=HUGGINGFACE_API_KEY
         )
 
     def create_vector_store(self) -> Chroma:
