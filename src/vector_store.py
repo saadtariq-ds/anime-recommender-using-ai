@@ -14,9 +14,9 @@ from config.config import (
 
 
 class AnimeVectorStore:
-    def __init__(self, csv_file_path: str, presist_directory: str = "chroma_db"):
+    def __init__(self, csv_file_path: str, persist_directory: str = "chroma_db"):
         self.csv_file_path = csv_file_path
-        self.presist_directory = presist_directory
+        self.persist_directory = persist_directory
         self.embedding = HuggingFaceEmbeddings(
             model_name=EMBEDDING_MODEL_NAME,
         )
@@ -59,6 +59,6 @@ class AnimeVectorStore:
         # Load existing Chroma vector store from disk
         vector_store = Chroma(
             embedding_function=self.embedding,
-            persist_directory=self.presist_directory
+            persist_directory=self.persist_directory
         )
         return vector_store

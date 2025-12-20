@@ -15,7 +15,8 @@ class AnimeRecommendationPipeline:
 
             vector_store = AnimeVectorStore(
                 csv_file_path="",
-                persist_directory=persist_directory)
+                persist_directory=persist_directory
+            )
             retriever = vector_store.load_vector_store().as_retriever()
 
             self.recommender = AnimeRecommender(
