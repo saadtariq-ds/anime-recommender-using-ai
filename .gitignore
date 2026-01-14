@@ -182,4 +182,5 @@ cython_debug/
 
 # Other files/folders to ignore
 chroma_db/
-logs/   
+logs/
+.idea/
